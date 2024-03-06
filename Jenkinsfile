@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', credentialsId: 'github-credent', url: 'https://github.com/your-org/xxl-job.git'
+                git branch: 'master', credentialsId: 'github-credent', url: 'https://github.com/1056661516/xxl-job.git'
             }
         }
         stage('Build JAR') {
