@@ -4,9 +4,9 @@ pipeline {
     environment {
         // 设置环境变量，如Maven和Docker相关配置
         MAVEN_OPTS = '-Dmaven.repo.local=$WORKSPACE/.m2/repository'
-        IMAGE_NAME = 'jenkins-test/xxl-job'
+        IMAGE_NAME = 'k8s/xxl-job'
         TAG = 'latest'
-        REGISTRY_URL = 'http://100.98.100.234'
+        REGISTRY_URL = 'https://chinapopin.com:18443/'
         DOCKER_CREDENTIAL_ID = '234-harbor' // Harbor的凭证ID
     }
 
