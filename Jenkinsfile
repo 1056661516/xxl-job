@@ -28,15 +28,6 @@ pipeline {
                 }
             }
         }
-        stage('Push to Harbor') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDENTIAL_ID}", passwordVariable: 'HARBOR_PASSWORD', usernameVariable: 'HARBOR_USERNAME')]) {
-                    sh "docker login -u ${HARBOR_USERNAME} -p ${HARBOR_PASSWORD} ${REGISTRY_URL}"
-                    docker.withRegistry("${REGISTRY_URL}", '234-harbor') {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
+ 
     }
 }
