@@ -1,12 +1,14 @@
 pipeline {
+    parameters {
+        string(name: 'branch', defaultValue: 'master', description: 'The branch to build.')
+    }
+
     agent any
     stages {
-        stage('Get Branch Info') {
+        stage('Checkout') {
             steps {
                 script {
-                    // 获取当前构建所基于的Git分支名称
-                    def branchName = env.BRANCH_NAME
-                    echo "Current branch: ${branchName}"
+                    git branch: params.branch, credentialsId: 'hubor-cre', url: 'https://github.com/1056661516/xxl-job.git'
                 }
             }
         }
