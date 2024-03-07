@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: params.branch, credentialsId: 'hubor-cre', url: 'https://github.com/1056661516/xxl-job.git'
+                    //git branch: params.branch, credentialsId: 'hubor-cre', url: 'https://github.com/1056661516/xxl-job.git'
                 }
             }
         }
